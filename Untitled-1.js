@@ -13,4 +13,12 @@ https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/st
  * @param {string} s
  * @return {number}
  */
-var firstUniqChar = function(s) {};
+var firstUniqChar = function(s) {
+  for (let v of s) {
+    if (s.indexOf(v) === s.lastIndexOf(v)) {
+      return s.indexOf(v);
+    }
+  }
+};
+
+console.log(firstUniqChar('loveleetcode'))
