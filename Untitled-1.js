@@ -1,24 +1,21 @@
 /**
- *字符串中的第一个唯一字符
-给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
-案例:
-s = "leetcode"
-返回 0.
-s = "loveleetcode",
-返回 2.
-注意事项：您可以假定该字符串只包含小写字母。
-https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/34/
+ * 有效的字母异位词
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+示例 1:
+输入: s = "anagram", t = "nagaram"
+输出: true
+示例 2:
+输入: s = "rat", t = "car"
+输出: false
+说明:
+你可以假设字符串只包含小写字母。
+进阶:
+如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
  */
+
 /**
  * @param {string} s
- * @return {number}
+ * @param {string} t
+ * @return {boolean}
  */
-var firstUniqChar = function(s) {
-  for (let v of s) {
-    if (s.indexOf(v) === s.lastIndexOf(v)) {
-      return s.indexOf(v);
-    }
-  }
-};
-
-console.log(firstUniqChar('loveleetcode'))
+var isAnagram = function(s, t) {};
