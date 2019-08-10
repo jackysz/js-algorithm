@@ -15,4 +15,16 @@ https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/st
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(s) {};
+var isPalindrome = function(s) {
+  s = s.toLowerCase();
+  let i = 0;
+  while (i < (s.length - 1) / 2) {
+    if (s.charAt(i) !== s.charAt(s.length - 1 - i)) {
+      return false;
+    }
+    i++;
+  }
+  return true;
+};
+
+console.log(isPalindrome('Amanaplana canalPanama'))
