@@ -19,4 +19,23 @@ https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/st
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {};
+var strStr = function(haystack, needle) {
+  // return haystack.indexOf(needle)
+  if (needle === '') {
+    return 0;
+  }
+  let j = 0;
+    for(let i = 0;i < haystack.length;i++){
+      if (haystack.charAt(i) === needle.charAt(j)) {
+        j++;
+      } else {
+        j = 0;
+      }
+      if (j === needle.length - 1) {
+        return i - j - 1;
+      }
+	  }
+	  return -1;
+};
+
+console.log(strStr('hello', 'll'))
