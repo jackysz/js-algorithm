@@ -37,4 +37,8 @@ https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/st
  * @param {string} str
  * @return {number}
  */
-var myAtoi = function(str) {};
+var myAtoi = function(str) {
+  str = str.trim();
+  const result = str.match(/^(\d|-)+/g);
+  return result ? Number(result[0]) : 0;
+};
