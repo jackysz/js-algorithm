@@ -42,6 +42,7 @@ var strStr = function(haystack, needle) {
   // }
   // return -1;
   // 方法三：KMP解法
+  // test
 };
 
 console.log(strStr("BBC ABCDAB ABCDABCDABDE", "ABCDABD"));
