@@ -20,22 +20,28 @@ https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/st
  * @return {number}
  */
 var strStr = function(haystack, needle) {
+  // 方法一：利用String语法
   // return haystack.indexOf(needle)
-  if (needle === '') {
-    return 0;
-  }
-  let j = 0;
-    for(let i = 0;i < haystack.length;i++){
-      if (haystack.charAt(i) === needle.charAt(j)) {
-        j++;
-      } else {
-        j = 0;
-      }
-      if (j === needle.length - 1) {
-        return i - j - 1;
-      }
-	  }
-	  return -1;
+  // 方法二：暴力解法
+  // if (needle === "") {
+  //   return 0;
+  // }
+  // let j = 0;
+  // for (let i = 0; i < haystack.length; i++) {
+  //   if (haystack.charAt(i) === needle.charAt(j)) {
+  //     j++;
+  //   } else {
+  //     // 如果不匹配，i置为上一轮匹配的下一位，j置为0
+  //     i = i - j;
+  //     j = 0;
+  //   }
+  //   // 全部匹配上，返回
+  //   if (j === needle.length) {
+  //     return i - j + 1;
+  //   }
+  // }
+  // return -1;
+  // 方法三：KMP解法
 };
 
-console.log(strStr('hello', 'll'))
+console.log(strStr("BBC ABCDAB ABCDABCDABDE", "ABCDABD"));
