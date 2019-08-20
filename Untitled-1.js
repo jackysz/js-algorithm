@@ -42,7 +42,44 @@ var strStr = function(haystack, needle) {
   // }
   // return -1;
   // 方法三：KMP解法
-  // test
+  if (needle === '') {
+    return 0;
+  }
+  const next = getNext(needle);
+  let j = 0;
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack.charAt(i) === needle.charAt(j)) {
+      j++;
+    } else {
+  // 如果不匹配，i不用改变，j置为此位置最大前后缀的长度
+      j = next[j];
+    }
+    // 全部匹配上，返回
+    if (j === needle.length) {
+      return i - j + 1;
+    }
+  }
+  return -1;
 };
+
+/**
+ * @param {string} str
+ * @return {array}
+ */
+const getNext = (str) => {
+  let j = 0;
+  let k = -1;
+  const next = [];
+  while (j < str.length) {
+    if (k === -1 || str[j] === str[k]) {
+      j++;
+      k++;
+      next[j] = k;
+    } else {
+      k = next[k];
+    }
+  }
+  return next;
+}
 
 console.log(strStr("BBC ABCDAB ABCDABCDABDE", "ABCDABD"));
