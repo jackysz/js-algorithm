@@ -24,4 +24,24 @@
  * @param {number} n
  * @return {string}
  */
-var countAndSay = function(n) {};
+var countAndSay = function(n) {
+  let str = "1";
+  while (n > 1) {
+    let count = 1;
+    let last = '';
+    let newstr = '';
+    for (let v of str) {
+      if (last === v) {
+        count++;
+      } else {
+        last = v;
+      }
+      newstr = newstr.concat(`${count}${last || v}`);
+    }
+    str = newstr;
+    n--;
+  }
+  return str;
+};
+
+console.log(countAndSay(4));
