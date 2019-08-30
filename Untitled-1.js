@@ -28,15 +28,23 @@ var countAndSay = function(n) {
   let str = "1";
   while (n > 1) {
     let count = 1;
-    let last = '';
-    let newstr = '';
+    let last = "";
+    let newstr = "";
     for (let v of str) {
+      if (last === "") {
+        last = v;
+        continue;
+      }
       if (last === v) {
         count++;
       } else {
+        newstr = newstr.concat(`${count}${last || v}`);
         last = v;
+        count = 1;
       }
-      newstr = newstr.concat(`${count}${last || v}`);
+    }
+    if (count) {
+      newstr = newstr.concat(`${count}${last}`);
     }
     str = newstr;
     n--;
